@@ -2,9 +2,10 @@ import { defineConfig } from '@umijs/max';
 
 export default defineConfig({
   antd: {
+    configProvider: { prefixCls: 'test' },
     styleProvider: {
       hashPriority: 'high',
-      legacyTransformer: true,
+      // legacyTransformer: true,
     },
   },
   access: {},
