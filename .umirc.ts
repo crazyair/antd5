@@ -5,7 +5,7 @@ export default defineConfig({
     configProvider: { prefixCls: 'test' },
     styleProvider: {
       hashPriority: 'high',
-      // legacyTransformer: true,
+      legacyTransformer: true,
     },
   },
   access: {},
