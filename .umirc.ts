@@ -16,25 +16,32 @@ export default defineConfig({
     title: '@umijs/max',
   },
   routes: [
-    {
-      path: '/',
-      redirect: '/home',
-    },
+    { path: '/', redirect: '/home' },
     {
       name: '首页',
-      path: '/home',
-      component: './Home',
+      path: '/app',
+      component: '../layouts/BaseLayout',
+      routes: [
+        {
+          path: 'demo',
+          name: 'demo',
+          component: './Home',
+        },
+      ],
     },
     {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
+      path: '/m',
+      name: '移动端-首页',
+      component: '../layouts/BaseLayout',
+      routes: [
+        {
+          path: 'demo/:id?',
+          name: 'demo2',
+          component: './Access',
+        },
+      ],
     },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
-    },
+    { path: '*', redirect: '/app' },
   ],
   npmClient: 'pnpm',
 });
