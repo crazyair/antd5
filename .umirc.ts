@@ -15,6 +15,7 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
+  copy: [{ from: 'demo.js', to: 'dist/[name].[hash:8][ext]' }],
   routes: [
     {
       path: '/',
