@@ -1,13 +1,7 @@
 import Guide from '@/components/Guide/Guide';
-import { Outlet } from '@umijs/max';
 
 const HomePage: React.FC = () => {
-  return (
-    <>
-      <Outlet />
-      <Guide />
-    </>
-  );
+  return <Guide />;
 };
 
 export default HomePage;
