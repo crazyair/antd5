@@ -1,9 +1,7 @@
 import { defineConfig } from '@umijs/max';
 
-import { defaultTheme } from '@ant-design/compatible';
+import { convertLegacyToken, defaultTheme } from '@ant-design/compatible';
 import { theme } from 'antd';
-
-const { convertLegacyToken } = require('@ant-design/compatible/lib');
 
 const { defaultAlgorithm, defaultSeed } = theme;
 
