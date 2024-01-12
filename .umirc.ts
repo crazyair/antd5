@@ -1,16 +1,21 @@
 import { defineConfig } from '@umijs/max';
 
-import { theme as AntdTheme } from 'antd';
+import { defaultTheme } from '@ant-design/compatible';
+import { theme } from 'antd';
 
 const { convertLegacyToken } = require('@ant-design/compatible/lib');
 
-const { defaultAlgorithm, defaultSeed } = AntdTheme;
+const { defaultAlgorithm, defaultSeed } = theme;
 
+const v4Token = theme.getDesignToken(defaultTheme);
+// v5 的 token 转 less
 const mapToken = defaultAlgorithm(defaultSeed);
-const v4Token = convertLegacyToken(mapToken);
+const v4Less = convertLegacyToken(v4Token);
+console.log('1111', v4Less['border-radius-base']);
 
 export default defineConfig({
-  antd: {},
+  // antd: {},
+  theme: { ...v4Less, 'primary-color': 'red' },
   access: {},
   model: {},
   initialState: {},
@@ -18,7 +23,6 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
-  theme: { ...v4Token },
   routes: [
     {
       path: '/',
