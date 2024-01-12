@@ -1,13 +1,16 @@
 import { defineConfig } from '@umijs/max';
 
+import { theme as AntdTheme } from 'antd';
+
+const { convertLegacyToken } = require('@ant-design/compatible/lib');
+
+const { defaultAlgorithm, defaultSeed } = AntdTheme;
+
+const mapToken = defaultAlgorithm(defaultSeed);
+const v4Token = convertLegacyToken(mapToken);
+
 export default defineConfig({
-  antd: {
-    configProvider: { prefixCls: 'test' },
-    styleProvider: {
-      hashPriority: 'high',
-      legacyTransformer: true,
-    },
-  },
+  antd: {},
   access: {},
   model: {},
   initialState: {},
@@ -15,6 +18,7 @@ export default defineConfig({
   layout: {
     title: '@umijs/max',
   },
+  theme: { ...v4Token },
   routes: [
     {
       path: '/',
