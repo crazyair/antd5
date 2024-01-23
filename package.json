@@ -2,19 +2,20 @@
   "private": true,
   "author": "叶枫 <645381995@qq.com>",
   "scripts": {
-    "dev": "max dev",
     "build": "max build",
+    "dev": "max dev",
     "format": "prettier --cache --write .",
-    "prepare": "husky install",
     "postinstall": "max setup",
+    "prepare": "husky install",
+    "preview": "max preview",
     "setup": "max setup",
     "start": "npm run dev"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
-    "@ant-design/pro-components": "^2.4.4",
     "@umijs/max": "^4.0.90",
-    "antd": "^5.4.0"
+    "antd-mobile": "^5.34.0",
+    "antd-mobile-icons": "^0.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",
